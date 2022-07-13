@@ -13,8 +13,9 @@ class warehouseRepository {
     }
 
     async getItemByName(name: string): Promise<any> {
+
         const query = `
-        SELECT product_name, quantity, price, image,
+        SELECT product_name, quantity, price, image
         FROM warehouse
         WHERE product_name ILIKE '${name}%'`;
 
@@ -65,7 +66,7 @@ class warehouseRepository {
 
         const values = [uuid];
 
-        await db.query(query);
+        await db.query(query, values);
     }
 
 }

@@ -3,7 +3,7 @@ import warehouseRepository from '../repositories/warehouseRepository';
 
 const routes = Router();
 
-routes.get('./items', async (req: Request, res: Response) => {
+routes.get('/items', async (req: Request, res: Response) => {
     try {
         const items = await warehouseRepository.getAllItems();
         res.status(200).json(items);
@@ -12,13 +12,14 @@ routes.get('./items', async (req: Request, res: Response) => {
     }
 });
 
-routes.get('./items/:name', async (req: Request, res: Response) => {
+routes.get('/items/:name', async (req: Request<{name:string}>, res: Response) => {
     try {
         const name = req.params.name;
         const items = await warehouseRepository.getItemByName(name);
     
         res.status(200).json(items);
     } catch (error) {
+        console.log(error)
         res.status(500).json({ erro: 'Nome inválido' });
     }
 });
