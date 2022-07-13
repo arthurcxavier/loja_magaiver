@@ -19,6 +19,7 @@ routes.get('/items/:name', async (req: Request, res: Response) => {
     
         res.status(200).json(items);
     } catch (error) {
+        console.log(error)
         res.status(500).json({ erro: 'Nome inválido' });
     }
 });
