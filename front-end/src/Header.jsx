@@ -14,7 +14,7 @@ class Header extends Component {
         return(
             <>
                 <header>
-                    <div><img src="../public/imgs" alt="Logo site" /></div>
+                    <div><img src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
                     <div><input type="text" /></div>
                 </header>
             </>
