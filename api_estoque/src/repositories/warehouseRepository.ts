@@ -41,7 +41,7 @@ class warehouseRepository {
         await db.query(query, values);
     }
 
-    async updateItem(uuid: string): Promise<void> {
+    async updateItem(item: Inventory): Promise<void> {
         const query = `
         UPDATE warehouse
         SET
@@ -53,7 +53,7 @@ class warehouseRepository {
         WHERE uuid = $6
         `;
 
-        const values = [uuid];
+        const values = [item.product_name, item.quantity, item.type, item.price, item.image, item.uuid];
 
         await db.query(query, values);
     }
