@@ -50,7 +50,7 @@ routes.put('/items/:uuid', async (req: Request, res: Response) => {
     }
 });
 
-routes.delete('/items/:uuid', async (req: Request, res: Response) => {
+routes.delete('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     try {
         const uuid = req.params.uuid;
 
@@ -58,8 +58,9 @@ routes.delete('/items/:uuid', async (req: Request, res: Response) => {
     
         res.status(200).json({ message: 'Item deletado com sucesso!' });
     } catch (error) {
-        res.status(500).json({ erro: error });
+        res.status(500).json({erro: error});
     }
+        
 });
 
 export default routes;
