@@ -12,7 +12,11 @@ routes.get('/items', async (req: Request, res: Response) => {
     }
 });
 
+<<<<<<< HEAD
 routes.get('/items/:name', async (req: Request<{name:string}>, res: Response) => {
+=======
+routes.get('/items/:name', async (req: Request, res: Response) => {
+>>>>>>> d5faefc2fb61116cd4df7f85372b5985c48a13de
     try {
         const name = req.params.name;
         const items = await warehouseRepository.getItemByName(name);
@@ -24,7 +28,7 @@ routes.get('/items/:name', async (req: Request<{name:string}>, res: Response) =>
     }
 });
 
-routes.post('./items', async (req: Request, res: Response) => {
+routes.post('/items', async (req: Request, res: Response) => {
     try {
         const newItem =  req.body;
         const uuid = await warehouseRepository.postItem(newItem);
@@ -35,7 +39,7 @@ routes.post('./items', async (req: Request, res: Response) => {
     }
 });
 
-routes.put('./items/:uuid', async (req: Request, res: Response) => {
+routes.put('/items/:uuid', async (req: Request, res: Response) => {
     try {
         const uuid = req.params.uuid;
         const editItem = req.body;
@@ -50,14 +54,13 @@ routes.put('./items/:uuid', async (req: Request, res: Response) => {
     }
 });
 
-routes.delete('./items/:uuid', async (req: Request, res: Response) => {
+routes.delete('/items/:uuid', async (req: Request, res: Response) => {
     try {
         const uuid = req.params.uuid;
 
         await warehouseRepository.deleteItem(uuid);
     
         res.status(200).json({ message: 'Item deletado com sucesso!' });
-    
     } catch (error) {
         res.status(500).json({ erro: error });
     }
