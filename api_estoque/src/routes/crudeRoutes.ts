@@ -12,7 +12,7 @@ routes.get('/items', async (req: Request, res: Response) => {
     }
 });
 
-routes.get('/items/:name', async (req: Request, res: Response) => {
+routes.get('/items/:name', async (req: Request<{name: string}>, res: Response) => {
     try {
         const name = req.params.name;
         const items = await warehouseRepository.getItemByName(name);
@@ -35,7 +35,7 @@ routes.post('/items', async (req: Request, res: Response) => {
     }
 });
 
-routes.put('/items/:uuid', async (req: Request, res: Response) => {
+routes.put('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     try {
         const uuid = req.params.uuid;
         const editItem = req.body;
@@ -50,7 +50,7 @@ routes.put('/items/:uuid', async (req: Request, res: Response) => {
     }
 });
 
-routes.delete('/items/:uuid', async (req: Request, res: Response) => {
+routes.delete('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     try {
         const uuid = req.params.uuid;
 
