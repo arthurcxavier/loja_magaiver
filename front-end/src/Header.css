@@ -1,0 +1,30 @@
+header{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #FFA34F;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px 250px 20px 15px;
+}
+
+#logo{
+    width: 204px;
+    height: 64px;
+}
+
+#txt-search{
+    border: 0;
+    border-radius: 24px;
+    width: 600px;
+    height: 35px;
+
+    padding-left: 40px;
+    font-size: 12pt;
+    color: #575555;
+}
+
