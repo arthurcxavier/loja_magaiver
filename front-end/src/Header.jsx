@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './Header.css';
 
 class Header extends Component {
     constructor(props){
@@ -18,7 +19,7 @@ class Header extends Component {
         return(
             <>
                 <header>
-                    <div><img src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
+                    <div><img id="logo" src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
                     <div><input type="text" id="txt-search" placeholder="Procure o seu produto" onChange={this.handleChange}/></div>
                 </header>
             </>
