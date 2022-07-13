@@ -28,7 +28,7 @@ routes.post('/items', async (req: Request, res: Response) => {
         const newItem =  req.body;
         const uuid = await warehouseRepository.postItem(newItem);
     
-        return res.status(201).json({ message: `O item ${uuid} foi adicionado com sucesso!` });
+        return res.status(201).json({ message: 'O item foi adicionado com sucesso!' });
     } catch (error) {
         res.status(500).json({ erro: error });
     }
