@@ -1,3 +1,5 @@
+api_estoque/node_modules
+
 # Logs - FRONT-END
 front-end/logs
 front-end/*.log
