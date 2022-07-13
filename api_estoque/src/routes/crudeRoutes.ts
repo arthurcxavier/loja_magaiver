@@ -12,11 +12,7 @@ routes.get('/items', async (req: Request, res: Response) => {
     }
 });
 
-<<<<<<< HEAD
-routes.get('/items/:name', async (req: Request<{name:string}>, res: Response) => {
-=======
 routes.get('/items/:name', async (req: Request, res: Response) => {
->>>>>>> d5faefc2fb61116cd4df7f85372b5985c48a13de
     try {
         const name = req.params.name;
         const items = await warehouseRepository.getItemByName(name);
