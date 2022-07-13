@@ -25,5 +25,6 @@ front-end/*.njsproj
 front-end/*.sln
 front-end/*.sw?
 
+# Api_vendas
 api_vendas/node_modules
 api_vendas/dist
