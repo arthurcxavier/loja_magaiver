@@ -1,11 +1,12 @@
 import express, { urlencoded } from 'express';
-import { appendFile } from 'fs';
 import routes from './routes/crudeRoutes';
+import cors from 'cors';
 
 const app = express();
 
 app.use(urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
 
 app.use(routes);
 
