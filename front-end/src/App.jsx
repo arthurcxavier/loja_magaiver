@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './Header.css';
 
 class App extends Component {
     constructor(props){
@@ -20,14 +21,14 @@ class App extends Component {
         const result = document.getElementById('result');
         result.innerHTML = ''
         try {
-            const response = await fetch(`http://localhost:8080/items/${this.state.text}`);
+            const response = await fetch(`http://localhost:8080/items/${this.state.search}`);
 
             response.json().then(function(data) {
                 for (let item of data) {
                     result.innerHTML += `
                     <div>
                         <img src="${item.image}" alt="Foto produto"/>
-                        <p>${item.name}</p><br>
+                        <p>${item.product_name}</p><br>
                         <p>${item.price}</p><br>
                         <p>${item.quantity}</p>
                     </div>
@@ -39,11 +40,34 @@ class App extends Component {
         }
     }
 
+    async showItems(){
+      const result = document.getElementById('result');
+      result.innerHTML = ''
+      try {
+          const response = await fetch(`http://localhost:8080/items`);
+
+          response.json().then(function(data) {
+              for (let item of data) {
+                  result.innerHTML += `
+                  <div>
+                      <img src="${item.image}" alt="Foto produto"/>
+                      <p>${item.product_name}</p><br>
+                      <p>${item.price}</p><br>
+                      <p>${item.quantity}</p>
+                  </div>
+                  `
+              }
+          });
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
     render(){
         return(
-            <>
+            <div onLoad={this.showItems}>
                 <header>
-                    <div><img src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
+                    <div><img id="logo" src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
                     <div>
                         <input type="text" id="txt-search" placeholder="Procure o seu produto" onChange={this.handleChange}/>
                         <button id="search-btn" onClick={this.showEvent}>🔍</button>
@@ -55,7 +79,7 @@ class App extends Component {
                   <div id='result'></div>
                 </div>
               </main>
-            </>
+            </div>
         )
     }
 }
