@@ -49,8 +49,8 @@ class App extends Component {
           response.json().then(function(data) {
               for (let item of data) {
                   result.innerHTML += `
-                  <div>
-                      <img src="${item.image}" alt="Foto produto"/>
+                  <div id="item">
+                      <img id="product_image" src="${item.image}" alt="Foto produto"/>
                       <p>${item.product_name}</p><br>
                       <p>${item.price}</p><br>
                       <p>${item.quantity}</p>
@@ -68,7 +68,7 @@ class App extends Component {
             <div onLoad={this.showItems}>
                 <header>
                     <div><img id="logo" src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
-                    <div>
+                    <div id="search">
                         <input type="text" id="txt-search" placeholder="Procure o seu produto" onChange={this.handleChange}/>
                         <button id="search-btn" onClick={this.showEvent}>🔍</button>
                     </div>

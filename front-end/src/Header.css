@@ -17,14 +17,37 @@ header{
     height: 64px;
 }
 
-#txt-search{
-    border: 0;
-    border-radius: 24px;
-    width: 600px;
-    height: 35px;
+#search{
+    background-color: white;
+    border:solid 2px white;
+    border-radius: 30px;
+    height:40px;
+    width: 500px;
 
-    padding-left: 40px;
-    font-size: 12pt;
-    color: #575555;
+    display: flex;
+    justify-content: space-between;
 }
 
+#txt-search{
+    background-color:transparent;
+    padding-left:5px;
+    font-size:18px;
+    border:none;
+    height:40px;
+    width:400px;
+
+    color: #575555;
+
+    outline: none;
+    padding-left: 30px;
+}
+
+#search-btn{
+    border:none;
+    height:40px;
+    border-radius:0 15px 15px 0;
+    width:70px;
+    background: white;
+
+    cursor: pointer;
+}
