@@ -17,20 +17,11 @@ header{
     height: 64px;
 }
 
-<<<<<<< HEAD:front-end/src/styles/Header.css
 #text-search{
     border: 0;
     border-radius: 24px;
     width: 600px;
     height: 35px;
-=======
-#search{
-    background-color: white;
-    border:solid 2px white;
-    border-radius: 30px;
-    height:40px;
-    width: 500px;
->>>>>>> f1a0641472c0b40881c3459be09ce8114e90817d:front-end/src/Header.css
 
     display: flex;
     justify-content: space-between;
