@@ -26,21 +26,7 @@ export async function showEvent(){
 }
 
 class Header extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            search: ''
-        }
-
-        this.handleChange = this.handleChange.bind(this);
-        this.keyPressed = this.keyPressed.bind(this);
-    }
-
-    handleChange(txt){
-        this.setState({search: txt.target.value});
-        console.log(this.state.search);
-    }
-
+    
     keyPressed(event){
         if(event.code === 'Enter'){
             showEvent();
@@ -52,7 +38,7 @@ class Header extends Component {
             <>
                 <header>
                     <div><img id="logo" src="../public/imgs/LogoMagaiver.png" alt="Logo site" /></div>
-                    <div><input type="text" id="text-search" placeholder="Procure o seu produto" onChange={this.handleChange} onKeyPress={this.keyPressed}/></div>
+                    <div><input type="text" id="text-search" placeholder="Procure o seu produto" onKeyPress={this.keyPressed}/></div>
                 </header>
             </>
         )
