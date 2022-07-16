@@ -6,9 +6,9 @@ function ItemCard({item, addToCart, rmFromCart}) {
         <img src={item.image} alt="Foto produto" />
         <h2>{item.product_name}</h2>
         <p>{item.price}</p>
-        <button onClick={() => addToCart()}>+</button>
-        <div id='resultado'>0</div>
-        <button onClick={() => rmFromCart()}>-</button>
+        <button onClick={() => addToCart(item.uuid)}>+</button>
+        <div id={item.uuid}>0</div>
+        <button onClick={() => rmFromCart(item.uuid)}>-</button>
     </div>
   )
 }

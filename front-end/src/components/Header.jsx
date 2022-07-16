@@ -1,14 +1,4 @@
-import axios from 'axios'
 import React, {useState} from 'react'
-
-/*
-async function searchItems(){
-    const [items, setItems] = useState([]);
-    var search = document.getElementById('search-bar')
-    const res = await axios.get(`http://localhost:8080/items/${search.value}`)
-    setItems(res.data)
-}*/
-
 
 function Header({searchItems}) {
     const [pesq, setPesq] = useState('')
