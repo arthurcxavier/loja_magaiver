@@ -19,7 +19,7 @@ function App() {
       }else{
         return currItem.map(item => {
           if(item.id === itemId){
-            return {...item, quant: item.quant+1}
+            return {...item, quant: item.quant + 1}
           }else{
             return item
           }
@@ -33,10 +33,24 @@ function App() {
     var res = document.getElementById(`${itemId}`)
     var num = Number(res.innerHTML)
     if (num <= 0){
-      res.innerHTML = 0
+      num = 0
     } else {
-      res.innerHTML = num - 1
+      num = num - 1
     }
+    res.innerHTML = num;
+    setListCart(currItem => {
+      if(currItem.find(item => item.id === itemId)?.quant === 1){
+        return currItem.filter(item => item.id !== itemId);
+      }else{
+        return currItem.map(item => {
+          if(item.id === itemId){
+            return {...item, quant:item.quant - 1};
+          }else{
+            return item;
+          }
+        });
+      }
+    });
   }
 
 
