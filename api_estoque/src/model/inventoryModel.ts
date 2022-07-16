@@ -2,9 +2,9 @@ type Inventory = {
     uuid?: string;
     product_name: string;
     quantity: number;
-    type: string;
+    type?: string;
     price: number;
-    image: string;
+    image?: string;
 }
 
 export default Inventory;
