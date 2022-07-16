@@ -1,19 +1,32 @@
-import { Component } from "react";
-import './styles/Header.css';
+import React from 'react'
+import Header from './components/Header'
+import Loja from './components/Loja'
 
-class App extends Component {
-    render(){
-        return(
-            <div>
-                <main>
-                <div>
-                  <h1>Itens da loja</h1>
-                  <div id='result'></div>
-                </div>
-              </main>
-            </div>
-        )
+function App() {
+
+  function addItemToCart(){
+    var res = document.getElementById('resultado')
+    var num = Number(res.innerHTML)
+    res.innerHTML = num + 1   
+  }
+
+  function rmItemFromCart(){
+    var res = document.getElementById('resultado')
+    var num = Number(res.innerHTML)
+    if (num <= 0){
+      res.innerHTML = 0
+    } else {
+      res.innerHTML = num - 1
     }
+  }
+
+  return (
+  <>
+    <Header />
+    <Loja addToCart={addItemToCart} rmFromCart={rmItemFromCart} />
+
+  </>
+  )
 }
 
 export default App
