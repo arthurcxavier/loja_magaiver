@@ -7,8 +7,10 @@ function Carrinho({ carrinho }){
             {/* {carrinho.map((item) => (<h1>{item.id} + {item.quant}</h1>))} */}
             {carrinho.map((cartItem) => (
                 <li>
-                    <h3>{cartItem.id}</h3>
+                    <h3>{cartItem.name}</h3>
+                    <p>{cartItem.price}</p>
                     <span>{cartItem.quant}</span>
+                    <p>{cartItem.price * cartItem.quant}</p>
                 </li>
             ))}
         </ul>

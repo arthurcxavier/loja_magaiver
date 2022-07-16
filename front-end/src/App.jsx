@@ -9,28 +9,28 @@ function App() {
   
   const [listCart, setListCart] = useState([]);
   
-  function addItemToCart(itemId){
-    var res = document.getElementById(`${itemId}`);
+  function addItemToCart(item){
+    var res = document.getElementById(`${item.uuid}`);
     var num = Number(res.innerHTML);
     res.innerHTML = num + 1;
     setListCart(currItem => {
-      if(currItem.find(item => item.id === itemId)== null){
-        return [...currItem, {id: itemId, quant: num+1}];
+      if(currItem.find(obj => obj.id === item.uuid)== null){
+        return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
       }else{
-        return currItem.map(item => {
-          if(item.id === itemId){
-            return {...item, quant: item.quant + 1}
+        return currItem.map(obj => {
+          if(obj.id === item.uuid){
+            return {...obj, quant: obj.quant + 1}
           }else{
-            return item
+            return obj
           }
         })
       }
     })    
-    // console.log(listCart); // bug, delay de 1 quant
+    //console.log(listCart); // bug, delay de 1 quant
   };
 
-  function rmItemFromCart(itemId){
-    var res = document.getElementById(`${itemId}`)
+  function rmItemFromCart(item){
+    var res = document.getElementById(`${item.uuid}`)
     var num = Number(res.innerHTML)
     if (num <= 0){
       num = 0
@@ -39,14 +39,14 @@ function App() {
     }
     res.innerHTML = num;
     setListCart(currItem => {
-      if(currItem.find(item => item.id === itemId)?.quant === 1){
-        return currItem.filter(item => item.id !== itemId);
+      if(currItem.find(obj => obj.id === item.uuid)?.quant === 1){
+        return currItem.filter(obj => obj.id !== item.uuid);
       }else{
-        return currItem.map(item => {
-          if(item.id === itemId){
-            return {...item, quant:item.quant - 1};
+        return currItem.map(obj => {
+          if(obj.id === item.uuid){
+            return {...obj, quant: obj.quant - 1};
           }else{
-            return item;
+            return obj;
           }
         });
       }
