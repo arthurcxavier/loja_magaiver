@@ -100,7 +100,7 @@ function App() {
 
   return (
   <>
-      <Header searchItems={fetchData}/>
+      <Header searchItems={fetchData} carrinho={listCart} />
       <Loja addToCart={addItemToCart} rmFromCart={rmItemFromCart} getQuantity={getItemQuantity} items={items}/>
       <Carrinho carrinho={listCart} setCart={setListCart}/>
   </>
