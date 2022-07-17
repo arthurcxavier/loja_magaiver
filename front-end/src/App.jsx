@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './components/Header';
 import Loja from './components/Loja';
 import Carrinho from './components/Carrinho';
+import './styles/Loja.css'
 
 function App() {
 

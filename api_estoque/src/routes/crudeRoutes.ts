@@ -12,7 +12,7 @@ routes.get('/items', async (req: Request, res: Response) => {
     }
 });
 
-routes.get('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
+routes.get('/item/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     try {
         const uuid = req.params.uuid;
         const items = await warehouseRepository.getItemById(uuid);

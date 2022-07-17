@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import ItemCard from './Items'
 
 function Loja({addToCart, rmFromCart, items}) {
 
   return (
-    <div>
-       <div>
-           {items.map((item, index) => (
-                <ItemCard key={index} className="" item={item} addToCart={addToCart} rmFromCart={rmFromCart} />
-           ))}
-        </div> 
-    </div>
+    <Fragment>
+      <h1>Produtos disponíveis</h1>
+      <main>
+        <section className='items-section'>
+            {items.map((item, index) => (
+                  <ItemCard key={index} item={item} addToCart={addToCart} rmFromCart={rmFromCart} />
+            ))}
+          </section> 
+      </main>
+    </Fragment>
   )
 }
 
