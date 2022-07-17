@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
 .button-cart {
     height: 3rem;
     width: 3rem;
-    border: 2px solid #FFA34F;
+    border: 2px solid var(--laranja);
     font-size: 1.5em;
-    color: #FFA34F;
+    color: var(--laranja);
     text-align: center;
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@
 
 .button-cart:hover {
     color: white;
-    background-color: #FFA34F;
+    background-color: var(--laranja);
     
 }
 
@@ -29,7 +30,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f8f7f7;
+    background-image: linear-gradient(90deg, var(--branco-quente), var(--branco-frio));
 }
 
 img {
@@ -48,6 +49,74 @@ img {
 }
 
 
+.itemCard {
+    width: 85%;
+    background-color: white;
+    padding: 2rem;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem 0rem;
+    border-radius: .75rem;
+    box-shadow: 4px 4px 20px rgba(128, 125, 125, 0.219);
+    color: var(--laranja-escuro);
+}
+
+@media (max-width: 1500px) {
+    .items-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    } 
+    main {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .items-section{
+        grid-template-columns: 1fr 1fr;
+    } 
+    main {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .items-section{
+        grid-template-columns: 1fr;
+    } 
+    main {
+        height: 170vh;
+    }
+}
+
+.item-card-texts {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.3rem;
+}
+
+.item-card-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-card-buttons > div {
+    font-size: 1.5em;
+}
+
 h1 {
     font-family: 'Bebas Neue', cursive;
+    text-indent: 5rem;
+    font-size: 3em;
+    padding-top: 1rem;
+    color: var(--laranja);
+    background-image: linear-gradient(90deg, var(--branco-quente), var(--branco-frio));
 }
