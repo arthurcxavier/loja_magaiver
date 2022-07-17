@@ -8,8 +8,8 @@ footer{
     display: flex;
     justify-content: flex-end;
 
-    padding-top: 20px;
-    padding-right: 30px;
+    padding-top: 1rem;
+    padding-right: 6rem;
 }
 
 #clear_button{
@@ -22,11 +22,12 @@ footer{
     font-size: 1.5em;
     color: var(--vermelho);
 
+    transition: all 0.3s ease;
     cursor: pointer
 }
 
 #clear_button:hover{
-    transition: all 0.3s ease;
+    
     background-color: var(--vermelho);
     color: white;
 }
