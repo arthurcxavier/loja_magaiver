@@ -14,9 +14,9 @@ function App() {
   
   function addItemToCart(item){
     var buybtn = document.getElementById('buy-btn');
-    var res = document.getElementById(`${item.uuid}`);
-    var num = Number(res.innerHTML);
-    res.innerHTML = num + 1;
+    //var res = document.getElementById(`${item.uuid}`);
+    var num = getItemQuantity(item) //Number(res.innerHTML);
+    //res.innerHTML = num + 1;
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)== null){
         buybtn.classList.remove('close');
@@ -35,14 +35,14 @@ function App() {
 
   function rmItemFromCart(item){
     var buybtn = document.getElementById('buy-btn');
-    var res = document.getElementById(`${item.uuid}`)
-    var num = Number(res.innerHTML)
+    //var res = document.getElementById(`${item.uuid}`)
+    var num = getItemQuantity(item) //Number(res.innerHTML);
     if (num <= 0){
       num = 0
     } else {
       num = num - 1
     }
-    res.innerHTML = num;
+    //res.innerHTML = num;
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)?.quant === 1){
         if(listCart.length === 1){
@@ -59,6 +59,14 @@ function App() {
         });
       }
     });
+  }
+
+  function getItemQuantity(item){
+    if(listCart.find(obj => obj.id === item)?.quant == undefined){
+      return 0
+    } else {
+      return listCart.find(obj => obj.id === item)?.quant
+    }
   }
 
 
@@ -93,7 +101,7 @@ function App() {
   return (
   <>
       <Header searchItems={fetchData}/>
-      <Loja addToCart={addItemToCart} rmFromCart={rmItemFromCart} items={items}/>
+      <Loja addToCart={addItemToCart} rmFromCart={rmItemFromCart} getQuantity={getItemQuantity} items={items}/>
       <Carrinho carrinho={listCart} setCart={setListCart}/>
   </>
   )
