@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ItemCard({item, addToCart, rmFromCart, getQuantity}) {
-  var quantity = getQuantity(item.uuid);
+  var quantity = getQuantity(item);
   return (
     <div className='itemCard'>
         <img src={item.image} alt="Foto produto" />
