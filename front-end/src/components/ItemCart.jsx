@@ -6,7 +6,7 @@ function ItemCart({ item }) {
             <h3>{item.name}</h3>
             <p>{item.price}</p>
             <span>{item.quant}</span>
-            <p>{item.price * item.quant}</p>
+            <p>{(item.price * item.quant).toFixed(2)}</p>
         </li>
     );
 };
