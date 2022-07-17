@@ -14,7 +14,7 @@ function Button({ carrinho, setCart }) {
         var num;
 
         carrinho.map( async item =>  {
-            const get = await axios.get(`http://localhost:8080/items/${item.id}`)
+            const get = await axios.get(`http://localhost:8080/item/${item.id}`)
             const {quantity} = get.data
             num = quantity - item.quant;
             if (num<0){

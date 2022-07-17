@@ -108,6 +108,49 @@ img {
     }
 }
 
+@media (max-height: 720px) and (max-width: 1500px) {
+    main {
+        height: 120vh;
+    }
+}
+
+@media (max-height: 600px) and (max-width: 1500px) {
+    main {
+        height: 140vh;
+    }
+}
+
+@media (max-height: 720px) and (max-width: 1000px) {
+    main {
+        height: 120vh;
+    }
+}
+
+@media (max-height: 600px) and (max-width: 1000px) {
+    main {
+        height: 140vh;
+    }
+}
+
+@media (max-height: 850px) and (max-width: 800px) {
+    main {
+        height: 190vh;
+    }
+}
+
+@media (max-height: 750px) and (max-width: 800px) {
+    main {
+        height: 210vh;
+    }
+}
+
+@media (max-height: 670px) and (max-width: 800px) {
+    main {
+        height: 240vh;
+    }
+}
+
+
 .item-card-texts {
     display: flex;
     flex-direction: row;
