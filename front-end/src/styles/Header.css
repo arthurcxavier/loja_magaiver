@@ -1,4 +1,4 @@
-header{
+#header{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,13 +9,23 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 24px 250px 20px 15px;
+    padding: 24px 15px 20px 15px;
 }
 
 #logo{
     width: 204px;
     height: 64px;
 }
+
+#total{
+    font-family: 'Oswald', sans-serif;
+    color:whitesmoke;
+    font-size: 22pt;
+}
+
+
+
+
 
 #text-search{
     border: 0;

@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Loja from './components/Loja';
 import Carrinho from './components/Carrinho';
 import './styles/Loja.css'
+import './styles/Header.css'
+import './styles/Carrinho.css'
 
 function App() {
 

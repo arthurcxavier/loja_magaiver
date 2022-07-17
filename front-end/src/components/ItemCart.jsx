@@ -2,12 +2,16 @@ import React from "react";
 
 function ItemCart({ item }) {
     return (
-        <li>
+        <div id="padding_list">
+        <li id="list">
             <h3>{item.name}</h3>
-            <p>{item.price}</p>
-            <span>{item.quant}</span>
-            <p>{item.price * item.quant}</p>
+            <p>R$ {item.price}</p>
+            <span>
+                <p>{item.quant} items</p>
+                <p>R$ {item.price * item.quant}</p>
+            </span>
         </li>
+        </div>
     );
 };
 
