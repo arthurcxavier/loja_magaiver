@@ -8,7 +8,7 @@ function ItemCart({ item }) {
                 <p>R$ {item.price}</p>
                 <span>
                     <p>{item.quant} {item.quant === 1 ? "item" : "items"}</p>
-                    <p>R$ {(item.price * item.quant).toFixed(2)}</p>
+                    <p>R$ {(item.price * item.quant).toFixed(2).replace('.' , ',')}</p>
                 </span>
             </li>
         </div>
