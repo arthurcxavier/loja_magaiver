@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 
 .button-cart {
     height: 3rem;
@@ -22,6 +20,25 @@
     color: white;
     background-color: var(--laranja);
     
+}
+
+.button-add-to-cart {
+    height: 3rem;
+    width: 100%;
+    background-color: var(--laranja);
+    border: 2px solid var(--laranja);
+    border-radius: 0.5rem;
+    font-size: 1.4em;
+    font-family: var(--bebas-neue);
+    color: rgba(255, 255, 255, 0.856);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button-add-to-cart:hover {
+    background-color: white;
+    border-color: var(--laranja);
+    color: var(--laranja);
 }
 
 main {
@@ -113,7 +130,7 @@ img {
 }
 
 h1 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: var(--bebas-neue);
     text-indent: 5rem;
     font-size: 3em;
     padding-top: 1rem;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import ItemCard from './Items'
 
-function Loja({addToCart, rmFromCart, items}) {
+function Loja({addToCart, rmFromCart, getQuantity, items}) {
 
   return (
     <Fragment>
@@ -9,7 +9,7 @@ function Loja({addToCart, rmFromCart, items}) {
       <main>
         <section className='items-section'>
             {items.map((item, index) => (
-                  <ItemCard key={index} item={item} addToCart={addToCart} rmFromCart={rmFromCart} />
+                  <ItemCard key={index} item={item} addToCart={addToCart} rmFromCart={rmFromCart} getQuantity={getQuantity} />
             ))}
           </section> 
       </main>

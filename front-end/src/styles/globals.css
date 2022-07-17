@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
   --laranja: #FFA34F;
   --laranja-escuro: #c76000;
   --branco-quente: rgba(235, 229, 224, 0.70);
   --branco-frio: rgba(225, 229, 239, 0.46);
+  --bebas-neue: 'Bebas Neue', sans-serif;
+  --Oswald: 'Oswald', sans-serif;
 }
-
-
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--Oswald);
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
