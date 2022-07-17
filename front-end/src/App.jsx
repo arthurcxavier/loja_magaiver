@@ -10,11 +10,13 @@ function App() {
   const [listCart, setListCart] = useState([]);
   
   function addItemToCart(item){
+    var buybtn = document.getElementById('buy-btn');
     var res = document.getElementById(`${item.uuid}`);
     var num = Number(res.innerHTML);
     res.innerHTML = num + 1;
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)== null){
+        buybtn.classList.remove('close');
         return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
       }else{
         return currItem.map(obj => {
@@ -26,10 +28,10 @@ function App() {
         })
       }
     })    
-    //console.log(listCart); // bug, delay de 1 quant
   };
 
   function rmItemFromCart(item){
+    var buybtn = document.getElementById('buy-btn');
     var res = document.getElementById(`${item.uuid}`)
     var num = Number(res.innerHTML)
     if (num <= 0){
@@ -40,6 +42,9 @@ function App() {
     res.innerHTML = num;
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)?.quant === 1){
+        if(listCart.length === 1){
+          buybtn.classList.add('close');
+        }
         return currItem.filter(obj => obj.id !== item.uuid);
       }else{
         return currItem.map(obj => {

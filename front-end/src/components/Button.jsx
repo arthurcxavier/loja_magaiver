@@ -7,7 +7,7 @@ function Button({ carrinho, setCart }) {
     const [list, setList] = useState([]);
     function buy() {
         var num;
-        
+
         carrinho.map( async item =>  {
             const get = await axios.get(`http://localhost:8080/items/${item.id}`)
             const {quantity} = get.data
@@ -40,7 +40,7 @@ function Button({ carrinho, setCart }) {
     }
 
     return (
-        <button onClick={() => buy()}>COMPRAR</button>
+        <button id='buy-btn' className="close" onClick={() => buy()}>COMPRAR</button>
     ) 
 }
 
