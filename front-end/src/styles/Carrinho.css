@@ -1,21 +1,22 @@
+#ul{
+    padding-top: 30px;
+}
+
 #padding_list{
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 20px;
-
-
+    padding-bottom: 25px;
 }
 
 #list{
-    background-color: #f8f7f7;
-    border: solid 2px red;
+    background-color: var(--branco-frio);
 
     display: flex;
     justify-content: space-around;
     align-items: center;
 
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
 
     text-align: center;
     font-family: 'Oswald', sans-serif;
