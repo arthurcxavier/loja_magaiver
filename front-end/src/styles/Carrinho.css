@@ -1,7 +1,7 @@
 footer{
     background-color: var(--branco-frio);
     box-shadow: -5px -5px 15px rgba(177, 176, 176, 0.233);
-    height: 100%;
+    min-height: 60vh;
 }
 
 @media (min-width: 1500px) and (min-height: 935px){
@@ -32,7 +32,7 @@ footer{
 #clear_button{
     height: 3rem;
     width: 3rem;
-    border-radius: 100%;
+    border-radius: 0.75rem;
     border: 2px solid var(--vermelho);
     background-color: transparent;
 
@@ -86,8 +86,6 @@ footer{
 #button_carrinho{
     display: flex;
     justify-content: center;
-
-    padding-bottom: 30px;
 }
 
 #buy-btn{
