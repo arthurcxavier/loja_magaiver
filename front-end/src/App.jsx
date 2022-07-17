@@ -14,40 +14,14 @@ function App() {
   
   function addItemToCart(item){
     var buybtn = document.getElementById('buy-btn');
-<<<<<<< HEAD
-    var clear_button = document.getElementById('clear_button');
-    //var res = document.getElementById(`${item.uuid}`);
-    var num = getItemQuantity(item) //Number(res.innerHTML);
-    //res.innerHTML = num + 1;
-    setListCart(currItem => {
-      if(currItem.find(obj => obj.id === item.uuid)== null){
-        buybtn.classList.remove('close');
-        clear_button.classList.remove('close_clear')
-        return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
-      }else{
-        return currItem.map(obj => {
-          if(obj.id === item.uuid){
-            return {...obj, quant: obj.quant + 1}
-          }else{
-            return obj
-          }
-        })
-      }
-    })    
-  };
-
-  function rmItemFromCart(item){
-    var buybtn = document.getElementById('buy-btn');
-    var clear_button = document.getElementById('clear_button');
-    //var res = document.getElementById(`${item.uuid}`)
-    var num = getItemQuantity(item) //Number(res.innerHTML);
-=======
+    var clear_button = document.getElementById('clear_button')
     var num = getItemQuantity(item);
     
     if(item.quantity > num){
       setListCart(currItem => {
         if(currItem.find(obj => obj.id === item.uuid)== null){
           buybtn.classList.remove('close');
+          clear_button.classList.remove('close_clear');
           return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
         }else{
           return currItem.map(obj => {
@@ -64,8 +38,8 @@ function App() {
 
   function rmItemFromCart(item){
     var buybtn = document.getElementById('buy-btn');
+    var clear_button = document.getElementById('clear_button')
     var num = getItemQuantity(item);
->>>>>>> e28cb6d4cd56e63351bd07385c9f595b6b29e128
     if (num <= 0){
       num = 0
     } else {
