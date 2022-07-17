@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import ItemCart from "./ItemCart";
 
-function Carrinho({ carrinho }){
+function Carrinho({ carrinho, setCart }){
     
     return(
         <>
@@ -11,7 +11,7 @@ function Carrinho({ carrinho }){
                     <ItemCart key={index} item={cartItem}/>
                 ))}
             </ul>
-            <Button/>
+            <Button carrinho={carrinho} setCart={setCart}/>
         </>
     )
 }

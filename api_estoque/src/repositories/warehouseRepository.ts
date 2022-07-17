@@ -12,6 +12,20 @@ class warehouseRepository {
         return rows || [];
     }
 
+    async getItemById(Id: string): Promise<Inventory> {
+
+        const query = `
+        SELECT product_name, quantity, price, image
+        FROM warehouse
+        WHERE uuid = $1`;
+
+        const values = [Id]
+
+        const {rows} = await db.query<Inventory>(query, values);
+        
+        return rows[0];
+    }
+
     async getItemByName(name: string): Promise<any> {
 
         const query = `
@@ -54,6 +68,21 @@ class warehouseRepository {
         `;
 
         const values = [item.product_name, item.quantity, item.type, item.price, item.image, item.uuid];
+
+        await db.query(query, values);
+    }
+
+    async patchItem(item: Inventory): Promise<void> {
+        const query = `
+        UPDATE warehouse
+        SET
+            product_name = $1,
+            quantity = $2,
+            price = $3
+        WHERE uuid = $4
+        `;
+
+        const values = [item.product_name, item.quantity, item.price, item.uuid];
 
         await db.query(query, values);
     }

@@ -86,8 +86,7 @@ function App() {
   <>
       <Header searchItems={fetchData}/>
       <Loja addToCart={addItemToCart} rmFromCart={rmItemFromCart} items={items}/>
-      {/* {console.log(listCart)} */}
-      <Carrinho carrinho={listCart}/>
+      <Carrinho carrinho={listCart} setCart={setListCart}/>
   </>
   )
 }

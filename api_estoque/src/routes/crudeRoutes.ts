@@ -12,6 +12,18 @@ routes.get('/items', async (req: Request, res: Response) => {
     }
 });
 
+routes.get('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
+    try {
+        const uuid = req.params.uuid;
+        const items = await warehouseRepository.getItemById(uuid);
+    
+        res.status(200).json(items);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ erro: 'Nome inválido' });
+    }
+});
+
 routes.get('/items/:name', async (req: Request<{name: string}>, res: Response) => {
     try {
         const name = req.params.name;
@@ -43,6 +55,21 @@ routes.put('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) =
         editItem.uuid = uuid;
     
         await warehouseRepository.updateItem(editItem);
+    
+        res.status(200).json({ message: 'Item atualizado com sucesso!' })
+    } catch (error) {
+        res.status(500).json({ erro: error });
+    }
+});
+
+routes.patch('/items/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
+    try {
+        const uuid = req.params.uuid;
+        const editItem = req.body;
+    
+        editItem.uuid = uuid;
+    
+        await warehouseRepository.patchItem(editItem);
     
         res.status(200).json({ message: 'Item atualizado com sucesso!' })
     } catch (error) {
