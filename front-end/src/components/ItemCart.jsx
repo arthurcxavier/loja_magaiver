@@ -5,10 +5,10 @@ function ItemCart({ item }) {
         <div id="padding_list">
             <li id="list">
                 <h3>{item.name}</h3>
-                <p>R$ {item.price}</p>
+                <p>R$ {item.price.toFixed(2).replace('.', ',')}</p>
                 <span>
                     <p>{item.quant} {item.quant === 1 ? "item" : "items"}</p>
-                    <p>R$ {item.price * item.quant}</p>
+                    <p>R$ {(item.price * item.quant).toFixed(2).replace('.' , ',')}</p>
                 </span>
             </li>
         </div>
