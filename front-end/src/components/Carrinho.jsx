@@ -3,10 +3,19 @@ import Button from "./Button";
 import ItemCart from "./ItemCart";
 
 function Carrinho({ carrinho, setCart }){
+    var clear_button = document.getElementById('clear_button');
+    var buybtn = document.getElementById('buy-btn');
+    function ClearCart() {
+        buybtn.classList.add('close');
+        clear_button.classList.add('close_clear')
+        setCart([])
+    }
 
     return(
         <footer>
-            <button id="delete_button">X</button>
+            <div id="div_clear_button">
+                <button onClick={ClearCart} className="close_clear" id="clear_button">X</button>
+            </div>
             <ul id="ul">
                 {carrinho.map((cartItem, index) => (
                     <ItemCart key={index} item={cartItem}/>

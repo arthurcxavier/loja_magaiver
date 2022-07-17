@@ -3,9 +3,14 @@ import axios from "axios";
 import { useState } from "react";
 
 function Button({ carrinho, setCart }) {
+    var buybtn = document.getElementById('buy-btn');
+    var clear_button = document.getElementById('clear_button');
 
     const [list, setList] = useState([]);
     function buy() {
+        buybtn.classList.add('close');
+        clear_button.classList.add('close_clear')
+
         var num;
 
         carrinho.map( async item =>  {

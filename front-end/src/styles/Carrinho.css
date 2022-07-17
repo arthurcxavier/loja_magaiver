@@ -2,6 +2,37 @@ footer{
     background-color: var(--branco-frio);
 }
 
+#div_clear_button{
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+#clear_button{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    border: 2px solid var(--vermelho);
+    background-color: transparent;
+
+    font-size: 1.5em;
+    color: var(--vermelho);
+
+    cursor: pointer
+}
+
+#clear_button:hover{
+    transition: all 0.3s ease;
+    background-color: var(--vermelho);
+    color: white;
+}
+
+.close_clear{
+    display: none;
+}
+
 #ul{
     padding-top: 30px;
 }
@@ -24,7 +55,9 @@ footer{
     padding-bottom: 11px;
 
     text-align: center;
+    color: var(--laranja-escuro);
     font-family: 'Oswald', sans-serif;
+    font-size: 14pt;
 
     border-radius: 15px;
 }

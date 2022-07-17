@@ -14,12 +14,14 @@ function App() {
   
   function addItemToCart(item){
     var buybtn = document.getElementById('buy-btn');
+    var clear_button = document.getElementById('clear_button');
     //var res = document.getElementById(`${item.uuid}`);
     var num = getItemQuantity(item) //Number(res.innerHTML);
     //res.innerHTML = num + 1;
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)== null){
         buybtn.classList.remove('close');
+        clear_button.classList.remove('close_clear')
         return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
       }else{
         return currItem.map(obj => {
@@ -35,6 +37,7 @@ function App() {
 
   function rmItemFromCart(item){
     var buybtn = document.getElementById('buy-btn');
+    var clear_button = document.getElementById('clear_button');
     //var res = document.getElementById(`${item.uuid}`)
     var num = getItemQuantity(item) //Number(res.innerHTML);
     if (num <= 0){
@@ -47,6 +50,7 @@ function App() {
       if(currItem.find(obj => obj.id === item.uuid)?.quant === 1){
         if(listCart.length === 1){
           buybtn.classList.add('close');
+          clear_button.classList.add('close_clear')
         }
         return currItem.filter(obj => obj.id !== item.uuid);
       }else{
