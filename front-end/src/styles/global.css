@@ -6,6 +6,7 @@
   --laranja-escuro: #C76000;
   --branco-quente: rgba(235, 229, 224, 0.70);
   --branco-frio: rgba(225, 229, 239, 0.46);
+  --branco-frio2: rgb(225, 229, 239);
   --vermelho: #D94555;
   --bebas-neue: 'Bebas Neue', sans-serif;
   --Oswald: 'Oswald', sans-serif;
@@ -21,7 +22,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: var(--branco-frio2);
 }
 
 .close {
