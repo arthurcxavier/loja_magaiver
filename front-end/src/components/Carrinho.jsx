@@ -5,7 +5,8 @@ import ItemCart from "./ItemCart";
 function Carrinho({ carrinho, setCart }){
 
     return(
-        <>
+        <footer>
+            <button id="delete_button">X</button>
             <ul id="ul">
                 {carrinho.map((cartItem, index) => (
                     <ItemCart key={index} item={cartItem}/>
@@ -14,7 +15,7 @@ function Carrinho({ carrinho, setCart }){
             <div id="button_carrinho">
                 <Button carrinho={carrinho} setCart={setCart}/>
             </div>
-        </>
+        </footer>
     )
 }
 

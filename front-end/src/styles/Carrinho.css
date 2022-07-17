@@ -1,3 +1,7 @@
+footer{
+    background-color: var(--branco-frio);
+}
+
 #ul{
     padding-top: 30px;
 }
@@ -9,7 +13,8 @@
 }
 
 #list{
-    background-color: var(--branco-frio);
+    background-color: white;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.205);
 
     display: flex;
     justify-content: space-around;
@@ -38,8 +43,8 @@
     font-family: 'Oswald', sans-serif;
     font-size: 12pt;
 
-    width: 130px;
-    height: 40px;
+    width: 10rem;
+    height: 3rem;
     border: solid 2px #FFA34F;
     border-radius: 15px;
 
