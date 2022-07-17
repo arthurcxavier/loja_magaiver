@@ -40,7 +40,7 @@ function Button({ carrinho, setCart }) {
     }
 
     return (
-        <button id='buy-btn' className="close" onClick={() => buy()}>COMPRAR</button>
+            <button id='buy-btn' className="close" onClick={() => buy()}>COMPRAR</button>
     ) 
 }
 
