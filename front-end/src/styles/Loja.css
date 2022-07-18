@@ -41,6 +41,27 @@
     color: var(--laranja);
 }
 
+.button-cart-out-of-stock {
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid var(--laranja-claro);
+    font-size: 1.5em;
+    color: var(--laranja-claro);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: transparent;
+    cursor: not-allowed;
+    transition: all .3s ease;
+}
+
+.button-cart-out-of-stock:hover {
+    color: white;
+    background-color: var(--laranja-claro);
+}
+
 main {
     width: 100%;
     min-height: 55vh;

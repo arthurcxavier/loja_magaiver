@@ -17,7 +17,12 @@ function ItemCard({item, addToCart, rmFromCart, getQuantity}) {
             <div className='item-card-buttons'>
               <button onClick={() => rmFromCart(item)} className="button-cart">-</button>
               <div id={item.uuid}>{quantity}</div>
-              <button onClick={() => addToCart(item)} className="button-cart">+</button>
+              {item.quantity > quantity ? (
+                <button onClick={() => addToCart(item)} className="button-cart">+</button>
+              ) : (
+                <button onClick={() => addToCart(item)} className="button-cart-out-of-stock">+</button>
+              )}
+              
             </div>
           )}
         </div>
