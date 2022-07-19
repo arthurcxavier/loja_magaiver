@@ -1,17 +1,24 @@
 import { Request, Response, NextFunction } from "express";
+import vendaController from "./DatabaseController"
 
 class vendasController {
-    mostrarVendas(request: Request, response: Response, next: NextFunction) {
+    async mostrarVendas(request: Request, response: Response, next: NextFunction) {
         try{
-            response.status(200).json({"mensagem": "tudo ok"});
+            const rowList = await vendaController.findAllVendas;
+            response.status(200).json(rowList);
         }catch(error){
+            response.status(500).send(`Internal Server Error, o servidor encontrou uma condição inesperada e que o impediu de atender à solicitação.`)
             console.log(error);
         };
     };
-    addVenda(request: Request, response: Response, next: NextFunction) {
+    async addVenda(request: Request, response: Response, next: NextFunction) {
         try{
-            ;
+            const req = request.body;
+            console.log(req);
+            const number = await vendaController.addVenda(req);
+            response.status(201).json({ "mensagem": `foi add venda com token: ${number}` });
         }catch(error){
+            response.status(400).send("Bad Request, o servidor não entendeu a requisição pois está com uma sintaxe inválida.");
             console.log(error);
         };
     }
