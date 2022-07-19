@@ -3,6 +3,7 @@ import React from 'react'
 import RowTable from './RowTable'
 
 function Table({vendas}) {
+  //mostra todos os produtos vendidos
   return (
     <div id='table' className='itemCard'>
         <h2>VENDAS</h2>
@@ -20,7 +21,7 @@ function Table({vendas}) {
             ))}
         </table>
     </div>
-  )
+  );
 }
 
-export default Table
+export default Table;

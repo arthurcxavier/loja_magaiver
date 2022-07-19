@@ -9,7 +9,7 @@ function RowTable({item}){
             <td>{item.date}</td>
             <td>{item.token}</td>
         </tr>
-    )
+    );
 }
 
 export default RowTable;

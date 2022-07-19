@@ -73,7 +73,7 @@ footer{
 }
 
 #buy-btn{
-    background-color: #FFA34F;
+    background-color: var(--laranja);
 
     color: whitesmoke;
     font-family: 'Oswald', sans-serif;
@@ -81,7 +81,7 @@ footer{
 
     width: 10rem;
     height: 3rem;
-    border: solid 2px #FFA34F;
+    border: solid 2px var(--laranja);
     border-radius: 15px;
 
     cursor: pointer;
@@ -93,7 +93,7 @@ footer{
 
 #buy-btn:hover{
     transition: all 0.3s ease;
-    border: solid 2px #FFA34F;
+    border: solid 2px var(--laranja);
     background-color: whitesmoke;
-    color: #FFA34F;
+    color: var(--laranja);
 }

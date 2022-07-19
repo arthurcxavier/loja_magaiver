@@ -1,5 +1,5 @@
-import React, { useEffect, useState, Fragment } from 'react'
-import ItemCard from './Items'
+import React, { useEffect, useState, Fragment } from 'react';
+import ItemCard from './Items';
 
 function Loja({addToCart, rmFromCart, getQuantity, items}) {
   return (
@@ -13,7 +13,7 @@ function Loja({addToCart, rmFromCart, getQuantity, items}) {
           </section> 
       </main>
     </Fragment>
-  )
+  );
 }
 
-export default Loja
+export default Loja;

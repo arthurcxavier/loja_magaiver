@@ -1,6 +1,7 @@
 import React from 'react'
 
 function UnidadesVendidasCard({vendas}) {
+  //soma a quantidade de itens vendidos
   let sum = 0
   vendas.map(item => (
     sum += item.quantity

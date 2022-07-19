@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from '../components/Header';
-import Loja from '../components/Loja';
-import Carrinho from '../components/Carrinho';
+import Header from '../components/App_components/Header';
+import Loja from '../components/App_components/Loja';
+import Carrinho from '../components/App_components/Carrinho';
 import '../styles/Loja.css'
 import '../styles/Header.css'
 import '../styles/Carrinho.css'
@@ -12,6 +12,7 @@ function App() {
   
   const [listCart, setListCart] = useState([]);
   
+  //adiciona um produto no carrinho
   function addItemToCart(item){
     var buybtn = document.getElementById('buy-btn');
     var clear_button = document.getElementById('clear_button')
@@ -20,7 +21,7 @@ function App() {
     if(item.quantity > num){
       setListCart(currItem => {
         if(currItem.find(obj => obj.id === item.uuid)== null){
-          buybtn.classList.remove('close');
+          buybtn.classList.remove('close'); //torna visivel o botao de comprar e de limpar o carrinho
           clear_button.classList.remove('close_clear');
           return [...currItem, {id: item.uuid, name: item.product_name, quant: (num+1), price: item.price}];
         }else{
@@ -36,6 +37,7 @@ function App() {
     }
   }
 
+  //remove um produto do carrinho
   function rmItemFromCart(item){
     var buybtn = document.getElementById('buy-btn');
     var clear_button = document.getElementById('clear_button')
@@ -48,7 +50,7 @@ function App() {
     setListCart(currItem => {
       if(currItem.find(obj => obj.id === item.uuid)?.quant === 1){
         if(listCart.length === 1){
-          buybtn.classList.add('close');
+          buybtn.classList.add('close'); //torna invisivel o botao de comprar e de limpar o carrinho
           clear_button.classList.add('close_clear')
         }
         return currItem.filter(obj => obj.id !== item.uuid);
@@ -64,6 +66,7 @@ function App() {
     });
   }
 
+  //funcao que verifica a quantidade do item no carrinho
   function getItemQuantity(item){
     if(listCart.find(obj => obj.id === item.uuid)?.quant == undefined){
       return 0
@@ -75,7 +78,7 @@ function App() {
 
 
   /* ------------------------ barra de pesquisa ------------------------ */
- 
+  
   // salva o item pesquisado, se ouver, ou todos os itens, se nao houver pesquisa
   const [items, setItems] = useState([]);
   
@@ -90,15 +93,15 @@ function App() {
       let res
       if(search == null){
         res = await axios.get(`http://localhost:8080/items/`);
-      } else {
+      }/* else {
         res = await axios.get(`http://localhost:8080/items/${search}`);
-      }
+      }*/
       setItems(res.data);
     } catch (error) {
       console.log(error);
     }
   }
- 
+  
   /* ------------------------------------------------------------------------ */
 
   return (

@@ -5,11 +5,12 @@ import ItemCart from "./ItemCart";
 function Carrinho({ carrinho, setCart }){
     var clear_button = document.getElementById('clear_button');
     var buybtn = document.getElementById('buy-btn');
+    //limpar o carrinho
     function ClearCart() {
         buybtn.classList.add('close');
-        clear_button.classList.add('close_clear')
-        setCart([])
-    }
+        clear_button.classList.add('close_clear');
+        setCart([]);
+    };
 
     return(
         <footer>
@@ -25,7 +26,7 @@ function Carrinho({ carrinho, setCart }){
                 <Button carrinho={carrinho} setCart={setCart}/>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Carrinho;

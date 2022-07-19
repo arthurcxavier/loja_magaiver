@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 function ItemCard({item, addToCart, rmFromCart, getQuantity}) {
   var quantity = getQuantity(item);
+  
   return (
     <div className='itemCard'>
         <img src={item.image} alt="Foto produto" />
@@ -27,7 +28,7 @@ function ItemCard({item, addToCart, rmFromCart, getQuantity}) {
           )}
         </div>
     </div>
-  )
+  );
 }
 
-export default ItemCard
+export default ItemCard;

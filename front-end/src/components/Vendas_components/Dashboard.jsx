@@ -12,7 +12,7 @@ function Dashboard({vendas}) {
             <Table vendas={vendas}/>
         </section>
     </main>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

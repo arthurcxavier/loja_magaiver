@@ -17,8 +17,8 @@ function Button({ carrinho, setCart }) {
         var tokenFake =  Math.floor(Math.random() * 20000 + 1000);
 
         carrinho.map( async item =>  {
-            const get = await axios.get(`http://localhost:8080/item/${item.id}`)
-            const {quantity} = get.data
+            const get = await axios.get(`http://localhost:8080/item/${item.id}`);
+            const {quantity} = get.data;
             num = quantity - item.quant;
             if (num<0){
                 alert(`Sem ${item.name} no estoque, tente novamente!`);
@@ -45,16 +45,16 @@ function Button({ carrinho, setCart }) {
                         itemList == obj.id
                     })
                 })
-            })
+            });
         } else {
             setCart([]);
             alert('Seu pedido foi realizado com sucesso! Obrigado!');
-        }
-    }
+        };
+    };
 
     return (
         <button id='buy-btn' className="close" onClick={() => buy()}>COMPRAR</button>
-    ) 
+    );
 }
 
 export default Button;

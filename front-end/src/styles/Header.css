@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 
-    background-color: #FFA34F;
+    background-color: var(--laranja);
 
     display: flex;
     flex-direction: row;

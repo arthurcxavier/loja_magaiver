@@ -1,11 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import Dashboard from '../components/Dashboard'
-import HeaderVendas from '../components/HeaderVendas'
+import Dashboard from '../components/Vendas_components/Dashboard'
+import HeaderVendas from '../components/Vendas_components/HeaderVendas'
 import '../styles/Header.css'
 import '../styles/Dashboard.css'
 import axios from 'axios'
-
-
 
 function Vendas() {
 
