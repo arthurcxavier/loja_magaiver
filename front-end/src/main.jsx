@@ -1,10 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './styles/global.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import App from './pages/App';
+import Vendas from './pages/Vendas';
+import './styles/global.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const routes = ReactDOM.createRoot(document.getElementById('root'));
+
+routes.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' static element={<App />} />
+        <Route path='admin' element={<Vendas />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )

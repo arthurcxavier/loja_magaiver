@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './components/Header';
-import Loja from './components/Loja';
-import Carrinho from './components/Carrinho';
-import './styles/Loja.css'
-import './styles/Header.css'
-import './styles/Carrinho.css'
+import Header from '../components/Header';
+import Loja from '../components/Loja';
+import Carrinho from '../components/Carrinho';
+import '../styles/Loja.css'
+import '../styles/Header.css'
+import '../styles/Carrinho.css'
 
 function App() {
 
