@@ -4,7 +4,7 @@ import vendaController from "./DatabaseController"
 class vendasController {
     async mostrarVendas(request: Request, response: Response, next: NextFunction) {
         try{
-            const rowList = await vendaController.findAllVendas;
+            const rowList = await vendaController.findAllVendas();
             response.status(200).json(rowList);
         }catch(error){
             response.status(500).send(`Internal Server Error, o servidor encontrou uma condição inesperada e que o impediu de atender à solicitação.`)
@@ -14,7 +14,6 @@ class vendasController {
     async addVenda(request: Request, response: Response, next: NextFunction) {
         try{
             const req = request.body;
-            console.log(req);
             const number = await vendaController.addVenda(req);
             response.status(201).json({ "mensagem": `foi add venda com token: ${number}` });
         }catch(error){
