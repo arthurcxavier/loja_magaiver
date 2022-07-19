@@ -3,6 +3,7 @@ import Dashboard from '../components/Dashboard'
 import HeaderVendas from '../components/HeaderVendas'
 import '../styles/Header.css'
 import '../styles/Dashboard.css'
+import axios from 'axios'
 
 
 
@@ -17,8 +18,9 @@ function Vendas() {
 
   // funcao que chama a api(GET)
   async function fetchData(){
+    let res
     try {
-      res = await axios.get(`http://localhost:8081/vendas`);
+      res = await axios.get(`http://localhost:8081/`);
       setVendas(res.data);
     } catch (error) {
       console.log(error);

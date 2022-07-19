@@ -1,12 +1,17 @@
 import React from 'react'
 
-function UnidadesVendidasCard() {
+function UnidadesVendidasCard({vendas}) {
+  let sum = 0
+  vendas.map(item => (
+    sum += item.quantity
+  ));
+
   return (
     <div id='sold-units'>
         <h2>UNIDADES VENDIDAS</h2>
-        <p>50.000 unidades</p>
+        <p>{sum} unidades</p>
     </div>
-  )
+  );
 }
 
-export default UnidadesVendidasCard
+export default UnidadesVendidasCard;
