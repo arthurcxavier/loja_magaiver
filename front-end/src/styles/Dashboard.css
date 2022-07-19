@@ -1,67 +1,4 @@
 
-.button-cart {
-    height: 3rem;
-    width: 3rem;
-    border: 2px solid var(--laranja);
-    font-size: 1.5em;
-    color: var(--laranja);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all .3s ease;
-
-}
-
-.button-cart:hover {
-    color: white;
-    background-color: var(--laranja);
-    
-}
-
-.button-add-to-cart {
-    height: 3rem;
-    width: 100%;
-    background-color: var(--laranja);
-    border: 2px solid var(--laranja);
-    border-radius: 0.5rem;
-    font-size: 1.4em;
-    font-family: var(--bebas-neue);
-    color: rgba(255, 255, 255, 0.856);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.button-add-to-cart:hover {
-    background-color: white;
-    border-color: var(--laranja);
-    color: var(--laranja);
-}
-
-.button-cart-out-of-stock {
-    height: 3rem;
-    width: 3rem;
-    border: 2px solid var(--laranja-claro);
-    font-size: 1.5em;
-    color: var(--laranja-claro);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    background-color: transparent;
-    cursor: not-allowed;
-    transition: all .3s ease;
-}
-
-.button-cart-out-of-stock:hover {
-    color: white;
-    background-color: var(--laranja-claro);
-}
-
 main {
     width: 100%;
     min-height: 55vh;
@@ -71,14 +8,23 @@ main {
     background-image: linear-gradient(90deg, var(--branco-quente), var(--branco-frio));
 }
 
-img {
-    height: 150px;
-    object-fit: cover;
+#profit { 
+    grid-area: profit-card; 
+    width: 730px; 
+    padding: 32px 0;
 }
 
-#profit { grid-area: profit-card; }
-#sold-units { grid-area: sold-card; }
-#table { grid-area: table-card; }
+#sold-units { 
+    grid-area: sold-card; 
+    width: 730px; 
+    padding: 32px 0;
+}
+
+#table { 
+    grid-area: table-card; 
+    min-width: 1500px; 
+    padding: 32px 0px;
+}
 
 .dashboard-section {
     display: grid;
@@ -89,9 +35,8 @@ img {
     max-width: 1500px;
     width: 90%;
     padding-bottom: 3rem;   
-    row-gap: 0.1rem;
+    row-gap: 4rem;
 }
-
 
 .itemCard {
     width: 85%;
@@ -129,11 +74,36 @@ img {
     font-size: 1.5em;
 }
 
-h1 {
-    font-family: var(--bebas-neue);
-    text-indent: 5rem;
-    font-size: 3em;
-    padding-top: 1rem;
+h2 {
+    padding-bottom: 1rem;
+    font-size: 2em;
     color: var(--laranja);
-    background-image: linear-gradient(90deg, var(--branco-quente), var(--branco-frio));
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+table {
+    table-layout: fixed;
+    width: 70%;
+    border-collapse: collapse;
+}
+
+table th {
+    font-weight: bolder;
+}
+
+table tr:nth-child(even){
+    background-color:  var(--branco-frio);
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    text-align: center;
+    padding-top: .3rem;
 }

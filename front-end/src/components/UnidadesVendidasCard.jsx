@@ -7,7 +7,7 @@ function UnidadesVendidasCard({vendas}) {
   ));
 
   return (
-    <div id='sold-units'>
+    <div id='sold-units' className='itemCard'>
         <h2>UNIDADES VENDIDAS</h2>
         <p>{sum} unidades</p>
     </div>
