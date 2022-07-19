@@ -6,6 +6,6 @@ const vendasRoutes = Router();
 vendasRoutes.get("/", vendasRouterController.mostrarVendas);
 vendasRoutes.post("/", vendasRouterController.addVenda);
 vendasRoutes.put("/", vendasRouterController.alterarVenda);
-vendasRoutes.delete("/", vendasRouterController.RemoverVenda);
+vendasRoutes.delete("/:id", vendasRouterController.RemoverVenda);
 
 export default vendasRoutes;

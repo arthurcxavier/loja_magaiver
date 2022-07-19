@@ -24,6 +24,16 @@ class vendaController {
 
         return result.rows[0].token;
     }
+
+    async deleteVenda(id: string): Promise<void> {
+        const query = `
+        DELETE FROM vendas
+        WHERE id = $1
+        `;
+
+        const values = [id];
+        await db.query(query, values)
+    }
 }
 
 export default new vendaController();
