@@ -2,16 +2,19 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 
+const HOST_VENDAS = `http://localhost:8081`;
+
 function Button({ carrinho, setCart }) {
     var buybtn = document.getElementById('buy-btn');
     var clear_button = document.getElementById('clear_button');
 
     const [list, setList] = useState([]);
     function buy() {
-        buybtn.classList.add('close');
-        clear_button.classList.add('close_clear')
+        buybtn.classList.add('close'); // retirar a classe close do botao para sumir
+        clear_button.classList.add('close_clear');
 
         var num;
+        var tokenFake =  Math.floor(Math.random() * 20000 + 1000);
 
         carrinho.map( async item =>  {
             const get = await axios.get(`http://localhost:8080/item/${item.id}`)
@@ -26,10 +29,15 @@ function Button({ carrinho, setCart }) {
                     quantity: quantity - item.quant,
                     price: item.price
                 });
+                // add comprar na tabela de vendas
+                await axios.post(HOST_VENDAS, {
+                    product_name: item.name,
+                    price: item.price,
+                    quantity: item.quant,
+                    token: tokenFake
+                });
             }
         });
-        //console.log(list)
-        //console.log(list.length)
         if(list.length > 0){
             setCart(currItem => {
                 return currItem.filter(obj => {
