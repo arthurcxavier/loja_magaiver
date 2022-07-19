@@ -1,24 +1,23 @@
 import React from 'react'
 
-function Table() {
+import RowTable from './RowTable'
+
+function Table({vendas}) {
   return (
     <div id='table'>
         <h2>VENDAS</h2>
         <table>
             <tr>
-                <th>TOKEN</th>
-                <th>PRODUTO</th>
-                <th>UNIDADES</th>
-                <th>VALOR</th>
-                <th>DATA</th>
+              <th>PRODUTO</th>
+              <th>PREÇO</th>
+              <th>QUANTIDADE</th>
+              <th>DATA</th>
+              <th>NÚMERO DA VENDA</th>
             </tr>
-            <tr>
-                <td>10254</td>
-                <td>Paçoca</td>
-                <td>10</td>
-                <td>R$ 5,00</td>
-                <td>18-07-2022</td>
-            </tr>
+            
+            {vendas.map((item, index) => (
+              <RowTable key={index} item={item}/>
+            ))}
         </table>
     </div>
   )
