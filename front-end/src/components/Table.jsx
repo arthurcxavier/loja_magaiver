@@ -2,7 +2,7 @@ import React from 'react'
 
 function Table() {
   return (
-    <div id='table'>
+    <div id='table' className='itemCard'>
         <h2>VENDAS</h2>
         <table>
             <tr>

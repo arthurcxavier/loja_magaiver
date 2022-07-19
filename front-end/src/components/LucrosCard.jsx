@@ -6,7 +6,7 @@ function DadosCard({vendas}) {
     sum += item.price
   ));
   return (
-    <div>
+    <div id='profit' className='itemCard'>
         <h2>LUCRO BRUTO</h2>
         <p>R$ {sum.toFixed(2).replace('.', ',')}</p>
     </div>
