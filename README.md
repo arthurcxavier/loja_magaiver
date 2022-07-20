@@ -4,8 +4,8 @@ Criação de um e-commerce para o comerciante Magaiver utilizando a biblioteca R
 ---------
 
 ## Reuniões: <br />
-  07/07/22 - Tlanejamento do trabalho <br />
-  12/07/22 - Tomeço do projeto(criação de milestones ideias) <br />
+  07/07/22 - Planejamento do trabalho <br />
+  12/07/22 - Começo do projeto(criação de milestones ideias) <br />
   15/07/22 - Reorganização/melhorias de projeto <br />
   17/07/22 - Reunião de ajustes finais do projeto <br />
   19/07/22 - Terminar, rever erros e melhorias <br /> 
